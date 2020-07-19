@@ -28,12 +28,13 @@ pyparsing==2.4.7          # via packaging
 pytest-flake8==1.0.6      # via streamz-opencv
 pytest-forked==1.2.0      # via pytest-xdist
 pytest-mypy==0.6.2        # via streamz-opencv
+pytest-tornado==0.8.1     # via streamz-opencv
 pytest-xdist==1.33.0      # via streamz-opencv
-pytest==5.4.3             # via pytest-flake8, pytest-forked, pytest-mypy, pytest-xdist, streamz-opencv
+pytest==5.4.3             # via pytest-flake8, pytest-forked, pytest-mypy, pytest-tornado, pytest-xdist, streamz-opencv
 six==1.15.0               # via packaging, pytest-xdist, streamz
 streamz==0.5.4            # via streamz-opencv
 toolz==0.10.0             # via streamz
-tornado==6.0.4            # via streamz
+tornado==6.0.4            # via pytest-tornado, streamz
 typed-ast==1.4.1          # via mypy
 typing-extensions==3.7.4.2  # via mypy
 wcwidth==0.2.5            # via pytest

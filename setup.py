@@ -16,6 +16,7 @@ setup(
             "pytest",
             "pytest-flake8",
             "pytest-mypy",
+            "pytest-tornado",
             "pytest-xdist",
             "flake8",
             "flake8-import-order",
