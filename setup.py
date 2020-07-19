@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
     name="streamz-opencv",
@@ -11,17 +11,5 @@ setup(
     install_requires=[
         "opencv-python",
         "streamz"
-    ],
-    extras_require={
-        "dev": [
-            "pytest",
-            "pytest-flake8",
-            "pytest-mypy",
-            "pytest-tornado",
-            "pytest-xdist",
-            "flake8",
-            "flake8-import-order",
-            "mypy"
-        ]
-    }
+    ]
 )

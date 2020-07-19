@@ -4,41 +4,40 @@
 #
 #    pip-compile requirements-dev.in
 #
--e file:///home/winlu/projects/streamz-opencv  # via -r requirements-dev.in
 apipkg==1.5               # via execnet
 attrs==19.3.0             # via pytest
 execnet==1.7.1            # via pytest-xdist
 filelock==3.0.12          # via pytest-mypy
-flake8-import-order==0.18.1  # via streamz-opencv
-flake8==3.8.3             # via pytest-flake8, streamz-opencv
-heapdict==1.0.1           # via zict
+flake8-import-order==0.18.1  # via -r requirements-dev.in
+flake8==3.8.3             # via -r requirements-dev.in, pytest-flake8
+heapdict==1.0.1           # via -r requirements.txt, zict
 importlib-metadata==1.7.0  # via flake8, pluggy, pytest
 mccabe==0.6.1             # via flake8
 more-itertools==8.4.0     # via pytest
 mypy-extensions==0.4.3    # via mypy
-mypy==0.782               # via pytest-mypy, streamz-opencv
-numpy==1.19.0             # via opencv-python
-opencv-python==4.3.0.36   # via streamz-opencv
+mypy==0.782               # via -r requirements-dev.in, pytest-mypy
+numpy==1.19.0             # via -r requirements.txt, opencv-python
+opencv-python==4.3.0.36   # via -r requirements.txt
 packaging==20.4           # via pytest
 pluggy==0.13.1            # via pytest
 py==1.9.0                 # via pytest
 pycodestyle==2.6.0        # via flake8, flake8-import-order
 pyflakes==2.2.0           # via flake8
 pyparsing==2.4.7          # via packaging
-pytest-flake8==1.0.6      # via streamz-opencv
+pytest-flake8==1.0.6      # via -r requirements-dev.in
 pytest-forked==1.2.0      # via pytest-xdist
-pytest-mypy==0.6.2        # via streamz-opencv
-pytest-tornado==0.8.1     # via streamz-opencv
-pytest-xdist==1.33.0      # via streamz-opencv
-pytest==5.4.3             # via pytest-flake8, pytest-forked, pytest-mypy, pytest-tornado, pytest-xdist, streamz-opencv
-six==1.15.0               # via packaging, pytest-xdist, streamz
-streamz==0.5.4            # via streamz-opencv
-toolz==0.10.0             # via streamz
-tornado==6.0.4            # via pytest-tornado, streamz
+pytest-mypy==0.6.2        # via -r requirements-dev.in
+pytest-tornado==0.8.1     # via -r requirements-dev.in
+pytest-xdist==1.33.0      # via -r requirements-dev.in
+pytest==5.4.3             # via -r requirements-dev.in, pytest-flake8, pytest-forked, pytest-mypy, pytest-tornado, pytest-xdist
+six==1.15.0               # via -r requirements.txt, packaging, pytest-xdist, streamz
+streamz==0.5.4            # via -r requirements.txt
+toolz==0.10.0             # via -r requirements.txt, streamz
+tornado==6.0.4            # via -r requirements.txt, pytest-tornado, streamz
 typed-ast==1.4.1          # via mypy
 typing-extensions==3.7.4.2  # via mypy
 wcwidth==0.2.5            # via pytest
-zict==2.0.0               # via streamz
+zict==2.0.0               # via -r requirements.txt, streamz
 zipp==3.1.0               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
