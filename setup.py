@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="streamz-opencv",
+    description="Provide opencv sources to streamz",
     version="0.1.0",
     packages=find_packages(),
     author="Lukas Winkler",
