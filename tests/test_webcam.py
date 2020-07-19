@@ -13,7 +13,7 @@ def test_from_webcam():
     stream.start()
     for _ in range(10):
         yield gen.sleep(0.1)
-    
+
     # Default poll interval is 0.1
     # Should produce at least 10 frames in 1s
     assert len(out) >= 10
