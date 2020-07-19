@@ -1,12 +1,37 @@
+from threading import Thread
+
 import cv2
+import numpy as np
 from streamz import Source, Stream
 from tornado import gen
+
+
+class WebcamVideoStream(Thread):
+    def __init__(self, src=0):
+        super().__init__()
+        self.stopped = False
+        self.stream = cv2.VideoCapture(src)
+        self.daemon = True
+        self.update()
+
+    def run(self):
+        while not self.stopped:
+            self.update()
+
+    def read(self):
+        return self.grabbed, self.frame
+
+    def update(self):
+        self.grabbed, self.frame = self.stream.read()
+
+    def stop(self):
+        self.stopped = True
 
 
 @Stream.register_api(staticmethod)
 class from_opencv(Source):
     """ Stream data from opencv """
-    def __init__(self, src, poll_interval=0.01, start=False, **kwargs):
+    def __init__(self, src, poll_interval=0.1, start=False, **kwargs):
         self.src = src
         self.poll_interval = poll_interval
 
@@ -20,12 +45,15 @@ class from_opencv(Source):
     def start(self):
         if self.stopped:
             self.stopped = False
-            self.stream = cv2.VideoCapture(self.src)
+            self.last_frame = None
+            self.stream = WebcamVideoStream(self.src)
+            self.stream.start()
             self.loop.add_callback(self.poll_opencv)
 
     def stop(self):
         if not self.stopped:
-            self.stream.release()
+            self.stream.stop()
+            self.stream.join()
             self.stream = None
             self.stopped = True
 
@@ -33,7 +61,9 @@ class from_opencv(Source):
         if self.stopped:
             return
         grabbed, frame = self.stream.read()
-        if grabbed:
+        if grabbed and np.any(frame != self.last_frame):
+            # Check if frames differ to not emit identical images
+            self.last_frame = frame
             return frame
 
     @gen.coroutine
