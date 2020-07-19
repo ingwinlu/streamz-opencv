@@ -15,6 +15,8 @@ setup(
         "dev": [
             "pytest",
             "pytest-flake8",
+            "pytest-mypy",
+            "pytest-xdist",
             "flake8",
             "flake8-import-order",
             "mypy"
