@@ -7,3 +7,4 @@ pytest-xdist
 flake8
 flake8-import-order
 mypy
+setuptools_scm
