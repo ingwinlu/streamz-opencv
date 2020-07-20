@@ -16,7 +16,6 @@ from streamz import Stream
 import streamz_opencv
 
 def scale(img, scale=1.0):
-    scale_percent = 60 # percent of original size
     width = int(img.shape[1] * scale)
     height = int(img.shape[0] * scale)
     dim = (width, height)
