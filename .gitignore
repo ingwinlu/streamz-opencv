@@ -1,6 +1,7 @@
-venv
-.vscode
-.python-version
-*.egg-info
 __pycache__
+.eggs
+.python-version
+.vscode
+*.egg-info
 dist
+venv
