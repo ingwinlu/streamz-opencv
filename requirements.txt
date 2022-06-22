@@ -5,7 +5,7 @@
 #    pip-compile
 #
 heapdict==1.0.1           # via zict
-numpy==1.19.0             # via opencv-python
+numpy==1.22.0             # via opencv-python
 opencv-python==4.3.0.36   # via streamz-opencv (setup.py)
 six==1.15.0               # via streamz
 streamz==0.5.4            # via streamz-opencv (setup.py)
