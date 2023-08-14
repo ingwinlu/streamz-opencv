@@ -10,5 +10,5 @@ opencv-python==4.3.0.36   # via streamz-opencv (setup.py)
 six==1.15.0               # via streamz
 streamz==0.5.4            # via streamz-opencv (setup.py)
 toolz==0.10.0             # via streamz
-tornado==6.0.4            # via streamz
+tornado==6.3.3            # via streamz
 zict==2.0.0               # via streamz
